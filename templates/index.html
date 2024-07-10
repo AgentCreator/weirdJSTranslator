@@ -23,6 +23,11 @@
 <p>...and here you get the result!</p>
 
 <p style="padding: 1rem; border-color: black; border-style: solid; display:inline-block; min-width: 10ch" id="result"></p>
+
+
+<div class="copies">
+   <button onclick="copy()">Copy</button>
+</div>
 <script>
     $("label > input").on("keyup", function () {
         {#console.log($(this).val())#}
@@ -34,4 +39,8 @@
             $("#result").text("")
         }
     })
+    function copy() {
+        navigator.clipboard.writeText($("#result").text())
+        $(".copies").append("<p>copied!</p>")
+    }
 </script>
