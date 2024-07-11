@@ -3,31 +3,28 @@
 
 <title>wierdify JS</title>
 
-<p>Welcome to weirdifyJS!</p>
+<body>
+    <h1>Welcome to weirdifyJS!</h1>
+    <h3>converts your normal text into weird unreadable text that requires JS to get the contents of.</h3>
+    <div class="info">
+        <p>letters that are <b>not allowed / impossible to get:</b></p>
+        <p>g h k m p q v w x z</p>
+        <br>
+    </div>
+    <label>
+        you type in the word(s) here
+        <br>
+        <input type="text">
+    </label>
+    <br>
+    <br>
+    <p>...and here you get the result!</p>
+    <p style="padding: 1rem; border-color: black; border-style: solid; display:inline-block; min-width: 10ch" id="result"></p>
+    <div class="copies">
+        <button onclick="copy()">Copy</button>
+    </div>
+</body>
 
-<p>converts your normal text into weird unreadable text that requires JS to get the contents of.</p>
-
-<p>letters that are <b>not allowed / impossible to get:</b></p>
-<p>g h k m p q v w x z</p>
-<br>
-
-<label>
-    you type in the word(s) here
-    <input type="text">
-</label>
-
-
-
-<br>
-<br>
-<p>...and here you get the result!</p>
-
-<p style="padding: 1rem; border-color: black; border-style: solid; display:inline-block; min-width: 10ch" id="result"></p>
-
-
-<div class="copies">
-   <button onclick="copy()">Copy</button>
-</div>
 <script>
     $("label > input").on("keyup", function () {
         {#console.log($(this).val())#}
@@ -44,3 +41,26 @@
         $(".copies").append("<p>copied!</p>")
     }
 </script>
+
+<style>
+    body {
+        font-family: arial, serif;
+    }
+    h1, h3 {
+        text-align: center;
+    }
+    .info {
+        background-color: #0077ff;
+        width: max-content;
+        padding: 1rem;
+        color: #fff;
+        border-radius: 1.5rem;
+        margin-bottom: .75rem;
+    }
+    input {
+        width: 20rem;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-top: 10px;
+    }
+</style>
